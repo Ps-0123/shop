@@ -1,0 +1,226 @@
+@font-face {
+    font-family: 'estedad';
+    src: url('../fonts/Estedad-Medium.ttf');
+}
+@font-face {
+    font-family: 'vazir';
+    src: url('../fonts/vazir.ttf');
+}
+@font-face {
+    font-family: 'shabnam';
+    src: url('../fonts/shabnam.ttf');
+}
+@font-face {
+    font-family: 'shabnam';
+    src: url('../fonts/Shabnam-Bold.ttf');
+    font-weight: bold;
+}
+@font-face {
+	font-family: 'iransansdn';
+	font-style: normal;
+	font-weight: bold;
+	src: url('../fonts/iransansdnbold.eot');
+	src: url('../fonts/iransansdnbold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../fonts/iransansdnbold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../fonts/iransansdnbold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../fonts/iransansdnbold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'iransansdn';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/iransansdnlight.eot');
+	src: url('../fonts/iransansdnlight.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../fonts/iransansdnlight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../fonts/iransansdnlight.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../fonts/iransansdnlight.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'iransansdn';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../fonts/iransansdn.eot');
+	src: url('../fonts/iransansdn.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('../fonts/iransansdn.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+		 url('../fonts/iransansdn.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('../fonts/iransansdn.ttf') format('truetype');
+}
+
+*{
+    direction: rtl;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'shabnam';
+}
+body.home{
+    background-color: #ffff;
+}
+a{ 
+    text-decoration: none;
+}
+.menu{
+    background-color: #076cc4;
+    max-height: fit-content;
+
+}
+.menu a {
+    color: #ffff;
+}
+.menu ul{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.menu ul li{
+    padding: 15px;
+    margin: 0 0 -10px 0;
+    font-size: 20px;
+    line-height: 1;
+}
+
+img.banner{width: 100%;
+max-height: 800px;}
+
+.carousel-control-next-icon{
+    position: absolute;
+    bottom: 30px;
+}
+
+.carousel-control-prev , .carousel-control-prev-icon{
+    position: absolute;
+    bottom: 15px;
+    right: 80px;
+
+}
+
+.box-takhfif{
+    background-color: #076cc4;
+    color: #fff;
+    padding: 25px;
+    border-radius: 16px;
+}
+
+.product-box{
+    padding: 20px;
+    background-color: #fff;
+}
+.box-takhfif .radius-right{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.product-box h5{
+    font-size: 15px;
+    color: #62666d;
+    text-align: center;
+    font-weight: bold;
+}
+
+.product-box h6{
+    text-align: center;
+    color: #161527;
+    font-weight: bold;
+
+}
+
+.box-takhfif p{
+    font-weight: bold;
+    font-family: 'estedad';
+    font-size: 35px;
+    padding: 20px;
+}
+
+body{
+    background-color: #f8f9f9;
+    font-weight: bold;
+}
+.content{
+    border-radius: 3px;
+    box-shadow: 0px 0px 8px 1px #7e91ff;
+    background-color: #fff;
+    height: 100vh;
+
+}
+.product .back-white{
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}
+.product h1{
+    font-size: 25px;
+}
+.dir-ltr{
+    direction: ltr;
+}
+body.product h1{
+    font-weight: bold;
+    font-family: 'iransansdn';
+
+}
+.other-img{
+    border: .5px solid #00000077;
+    padding: 2px;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+.other-img:hover{
+    padding: 0px;
+}
+.add-cart , .register-form button{
+    background-color: #076cc4;
+    color: #ffff;
+    width: 100%;
+    border: none;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.comment{
+    border-radius: 3px;
+    box-shadow: 0px 0px 8px 1px #7e91ff;
+    background-color: #fff;
+}
+.comment.p{
+    margin: 0 100px 0 100px;
+    padding: 20px;
+}
+h6{
+    font-weight: bold;
+}
+.comment h6{
+    display: flex;
+    align-items: center;
+}
+
+.register-form{
+    background: #ffff;
+    margin:100px auto auto auto;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.register-form input{
+    margin-bottom: 10px;
+}
+
+.register-form p{
+    font-family: 'estedad';
+    font-weight: 300;
+}
+/* Dashboard */
+body.dashboard .content a{
+    line-height: 50px;
+}
+body.dashboard ul{padding: 0px;}
+
+body.dashboard .content{
+    box-shadow: none;
+}
+
+body.dashboard form,table a{
+    line-height: normal !important;
+}
+/* Dashboard */
