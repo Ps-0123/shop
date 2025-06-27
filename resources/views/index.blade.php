@@ -57,7 +57,7 @@
   <div class="product-box radius-right">
     <img class="img-thumbnail card-img-top" style="max-height: 200px; object-fit:contain;" width="100%" 
         @if ($product->cover != null)
-        src="{{asset("storage/$product->cover")}}"
+        src="{{asset("storage/".$product->gallery()[0])}}"
         @else
         src="{{asset("storage/Product_images/noimage.jpg")}}"
         @endif

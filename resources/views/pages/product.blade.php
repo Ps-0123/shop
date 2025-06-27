@@ -5,36 +5,23 @@
 
         <div class="container">
             <div class="back-white">
-                <a href="">{{$product->name}}</a>/<a href="">دسته بندی</a>
+                <a href="">{{ $product->name }}</a>/<a href="">دسته بندی</a>
                 <div class="row dir-ltr">
                     <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
                         <div class="content p-5">
                             <img id="product-img" width="100%"
-                                @if ($product->cover != null) src="{{ asset("storage/$product->cover") }}"
+                                @if ($product->cover != null) src="{{ asset('storage/' . $product->gallery()[0]) }}"
                             @else
                             src="{{ asset('storage/Product_images/noimage.jpg') }}" @endif>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                        <img onclick="gallery(this)" class="other-img" width="100%"
-                                            src="images/product/3cf0e091a34b6583a12a125f350628c14d7a54c5_1729879355.webp"
-                                            alt="">
-                                    </div>
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                        <img onclick="gallery(this)" class="other-img" width="100%"
-                                            src="images/product/986c89a39002f22bbfcc0063dcd760089a9fd157_1739716046.webp"
-                                            alt="">
-                                    </div>
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                        <img onclick="gallery(this)" class="other-img" width="100%"
-                                            src="images/product/e1472bd410b1a8bfa2f21e24093c50a7ef0f2a4e_1715166214.webp"
-                                            alt="">
-                                    </div>
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                                        <img onclick="gallery(this)" class="other-img" width="100%"
-                                            src="images/product/fab87c83a157ddc6416a97acf1709745591715a7_1736173610.webp"
-                                            alt="">
-                                    </div>
+                                    @foreach (array_slice($product->gallery(), 1) as $image)
+                                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                            <img onclick="gallery(this)" class="other-img" width="100%"
+                                                src="{{ asset('storage/' . $image) }}"
+                                                alt="">
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <hr class="mt-4 mb-4">
@@ -71,9 +58,9 @@
                                             افزودن به سبد خرید</button>
                                     </form>
                                 @else
-                                    <form action="{{route('cart.destroy',$product->Cart[0]->id)}}" method="post">
+                                    <form action="{{ route('cart.destroy', $product->Cart[0]->id) }}" method="post">
                                         @csrf
-                                        @method("DELETE")
+                                        @method('DELETE')
                                         <button class="add-cart">
                                             <i class="fa fa-cart-plus" aria-hidden="true"></i>
 

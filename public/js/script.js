@@ -1,8 +1,14 @@
 function gallery(pic){
-    // alert(pic.src);
+    temp = document.getElementById('product-img').src;
     document.getElementById('product-img').src = pic.src;
+    pic.src = temp;
 }
-
+function showInputGallery(number){
+    element = document.getElementById("galleri-"+number).classList;
+    element.remove("d-none");
+    element.add("d-block");
+    
+}
 function Selector(){
     a = document.querySelectorAll(".a");
     for(i=0;i<a.length;i++){
