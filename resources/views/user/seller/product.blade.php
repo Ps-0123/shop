@@ -22,7 +22,12 @@
             <p class="alert alert-danger">{{ $message }}</p>
         @enderror
         <label class="mt-3" for="cover">تصویر</label>
-        <input type="file" name="cover">
+        <input class="d-block" type="file" oninput="showInputGallery(1)" name="cover">
+        <label>گالری تصاویر</label>
+        <input type="file" class="d-none mt-2" id="galleri-1" oninput="showInputGallery(2)" name="galleri-1">
+        <input type="file" class="d-none mt-2" id="galleri-2" oninput="showInputGallery(3)" name="galleri-2">
+        <input type="file" class="d-none mt-2" id="galleri-3" oninput="showInputGallery(4)" name="galleri-3">
+        <input type="file" class="d-none mt-2" id="galleri-4" name="galleri-4">
         <button class="btn btn-primary mt-3 form-control">انتشار</button>
     </form>
     @if (count($products))
@@ -45,13 +50,14 @@
                     <td>{{ $product->short_content() }}</td>
                     <td>{{ $product->fa_num() }}</td>
                     <td>{{ $product->inventory }}</td>
-                    <td><img width="100px" src="{{asset("storage/".$product->cover)}}" alt="no"></td>
-                    <td><a class="btn btn-warning mb-1" href="{{route('product.edit',$product->id)}}">ویرایش</a> 
+                    <td><img style="width:auto;  max-height:100px" src="{{asset("storage/".$product->gallery()[0])}}" alt="no"></td>
+                    <td><a class="btn btn-warning mb-1 w-100" href="{{route('product.edit',$product->id)}}">ویرایش</a> 
                     <form action="{{route('product.destroy',$product->id)}}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-danger">Delete</button>
+                        <button class="btn btn-danger w-100">Delete</button>
                     </form>
+                    <a target="_blank" href="{{route('product.show',$product->id)}}" class="btn w-100 btn-primary mt-1">مشاهده</a>
                     </td>
 
                 </tr>

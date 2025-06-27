@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('content');
             $table->text('price');
             $table->integer('inventory');
-            $table->string('cover')->nullable();
+            $table->text('cover')->nullable();
             $table->timestamps();
         });
     }

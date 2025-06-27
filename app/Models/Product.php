@@ -17,7 +17,10 @@ class Product extends Model
         'cover',
     ];
 
-
+    public function gallery() : Array{
+  $array = explode(",", $this->cover ?? '');
+    return $array;
+    }
     public function Comments(): HasMany{
         return $this->hasMany(comment::class)->where('status',1);
     }
